@@ -1,8 +1,18 @@
 <template>
   <div class="header">
-    <div class="header-backup">返回</div>
-    <div class="header-content">输入城市/景点/游玩主题</div>
-    <div class="header-city">城市</div>
+    <div class="header-backup">
+      <span class="iconfont back-icon">&#xe611;</span>
+    </div>
+    <div class="header-content">
+      <span class="iconfont">&#xe602;</span>
+      输入城市/景点/游玩主题
+    </div>
+    <div class="header-city">
+      <div class="header-right">
+        城市
+        <span class="iconfont arrow-icon">&#xe6aa;</span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -16,20 +26,24 @@ export default {
   background: #00bcd4
   color: #fff
   .header-backup
-    width: 0.86rem
-    line-height: .86rem
-    text-align : center
+    width: 0.9rem
+    line-height: 0.86rem
+    text-align: center
+    .back-icon
+      font-size: 0.4rem
   .header-content
     flex: 1
-    margin-top: .12rem
-    margin-bottom: .12rem
-    line-height: .62rem
+    margin-top: 0.12rem
+    margin-bottom: 0.12rem
+    line-height: 0.62rem
     background: #fff
-    border-radius: .05rem
+    border-radius: 0.05rem
     color: #ccc
-    padding-left: .12rem
+    padding-left: 0.12rem
   .header-city
-    width: 0.86rem
-    line-height: .86rem
-    text-align : center
+    width: 1.2rem
+    line-height: 0.86rem
+    text-align: center
+    .arrow-icon
+      margin-left: -0.1rem
 </style>

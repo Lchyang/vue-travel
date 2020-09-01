@@ -8,6 +8,7 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 // 多倍屛物理边框不是1px的问题
 import './assets/styles/border.css'
+import './assets/styles/iconfont.css'
 
 fastClick.attach(document.body)
 
