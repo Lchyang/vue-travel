@@ -6,7 +6,7 @@
           <img class="swiper-img" :src="banner" />
         </div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination" slot="pagination"></div>
     </div>
   </div>
 </template>
@@ -31,8 +31,10 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.wrapper>>> .swiper-pagination-bullet-active
+
+.swapper >>> .swiper-pagination-bullet-active
   background: #fff
+
 .swapper
   overflow: hidden
   height: 0

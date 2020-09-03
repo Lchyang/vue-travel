@@ -10,11 +10,17 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 // 导入iconfont
 import './assets/styles/iconfont.css'
+
+// Swiper4.0 以上 小圆点解决方案
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // If you use Swiper 6.0.0 or higher
 import 'swiper/swiper-bundle.css'
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/swiper.esm'
+import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
+SwiperClass.use([Pagination, Mousewheel, Autoplay])
+const { Swiper, SwiperSlide } = getAwesomeSwiper(SwiperClass)
+Vue.use(VueAwesomeSwiper, Swiper, SwiperSlide)
 
-Vue.use(VueAwesomeSwiper)
 fastClick.attach(document.body)
 Vue.config.productionTip = false
 
