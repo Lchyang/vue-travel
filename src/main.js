@@ -8,10 +8,14 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 // 多倍屛物理边框不是1px的问题
 import './assets/styles/border.css'
+// 导入iconfont
 import './assets/styles/iconfont.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
+Vue.use(VueAwesomeSwiper)
 fastClick.attach(document.body)
-
 Vue.config.productionTip = false
 
 new Vue({
