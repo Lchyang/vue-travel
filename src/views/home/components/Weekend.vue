@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="recommend-header">周末去哪</div>
-    <div class="recommend-content" v-for="item of recommendList" :key="item.id">
+    <div class="recommend-content" v-for="item of list" :key="item.id">
       <div class="img-swapper">
         <img class="img" :src="item.imgUrl" />
       </div>
@@ -15,23 +15,8 @@
 
 <script>
 export default {
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-          title: '大连圣亚海洋世界',
-          desc: '浪漫大连首站，浪漫嗯海洋主题乐园'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-          title: '大连圣亚海洋世界',
-          desc: '浪漫大连首站，浪漫嗯海洋主题乐园'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

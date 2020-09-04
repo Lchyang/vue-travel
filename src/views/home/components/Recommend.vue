@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="recommend-header">热门推荐</div>
-    <div class="recommend-content" v-for="item of recommendList" :key="item.id">
+    <div class="recommend-content" v-for="item of list" :key="item.id">
       <img class="img" :src="item.imgUrl" />
       <div class="content-swapper">
         <div class="recommend-title">{{item.title}}</div>
@@ -14,22 +14,9 @@
 
 <script>
 export default {
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '大连圣亚海洋世界',
-          desc: '大连圣亚海洋世界，浪漫嗯海洋主题乐园'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '大连圣亚海洋世界',
-          desc: '大连圣亚海洋世界，浪漫嗯海洋主题乐园'
-        }
-      ]
+  props: {
+    list: {
+      type: Array
     }
   }
 }
