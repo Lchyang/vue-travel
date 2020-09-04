@@ -93,7 +93,7 @@ export default {
   padding-bottom: 25%
   .img-swapper
     position: absolute
-    top: 0.1rem
+    top: 0
     left: 0
     right: 0
     bottom: 0.44rem
@@ -106,7 +106,7 @@ export default {
     position: absolute
     left: 0
     right: 0
-    bottom: 0
+    bottom: 0.1rem
     color: $darkTextColor
     text-align: center
     line-height: 0.44rem

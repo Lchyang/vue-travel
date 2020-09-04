@@ -1,35 +1,39 @@
 <template>
   <div>
     <div class="recommend-header">周末去哪</div>
-    <div class="recommend-content">
+    <div class="recommend-content" v-for="item of recommendList" :key="item.id">
       <div class="img-swapper">
-        <img
-          class="img"
-          src="http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg"
-        />
+        <img class="img" :src="item.imgUrl" />
       </div>
       <div class="content-swapper">
-        <div class="recommend-title">大连圣亚海洋世界</div>
-        <div class="recommend-desc">浪漫大连首站，浪漫嗯海洋主题乐园</div>
-      </div>
-    </div>
-    <div class="recommend-content">
-      <div class="img-swapper">
-        <img
-          class="img"
-          src="http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg"
-        />
-      </div>
-      <div class="content-swapper">
-        <div class="recommend-title">大连圣亚海洋世界</div>
-        <div class="recommend-desc">浪漫大连首站，浪漫嗯海洋主题乐园</div>
+        <div class="recommend-title">{{item.title}}</div>
+        <div class="recommend-desc">{{item.desc}}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      recommendList: [
+        {
+          id: '0001',
+          imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+          title: '大连圣亚海洋世界',
+          desc: '浪漫大连首站，浪漫嗯海洋主题乐园'
+        },
+        {
+          id: '0002',
+          imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+          title: '大连圣亚海洋世界',
+          desc: '浪漫大连首站，浪漫嗯海洋主题乐园'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus">
@@ -40,7 +44,7 @@ export default {}
 .recommend-content
   display: flex
   flex-direction: column
-  overflow hidden
+  overflow: hidden
   height: 4rem
   .img-swapper
     width: 100%
