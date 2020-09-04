@@ -72,7 +72,6 @@ export default {
         }
         pages[pageIndex].push(item)
       })
-      console.log(pages)
       return pages
     }
   }
