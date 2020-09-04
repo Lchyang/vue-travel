@@ -23,10 +23,6 @@ export default {
         loop: true
       }
     }
-  },
-  mounted () {
-    console.log('Current Swiper instance object', this.mySwiper)
-    this.mySwiper.slideTo(3, 1000, false)
   }
 }
 </script>
