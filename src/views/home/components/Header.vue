@@ -8,10 +8,12 @@
       输入城市/景点/游玩主题
     </div>
     <div class="header-city">
-      <div class="header-right">
-        城市
-        <span class="iconfont arrow-icon">&#xe6aa;</span>
-      </div>
+      <router-link to="/city">
+        <div class="header-right">
+          城市
+          <span class="iconfont arrow-icon">&#xe6aa;</span>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -21,6 +23,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~styles/varibles'
+
 .header
   display: flex
   height: $headerHeight
@@ -45,6 +48,8 @@ export default {
     width: 1.2rem
     line-height: 0.86rem
     text-align: center
+    .header-right
+      color: #fff
     .arrow-icon
       margin-left: -0.1rem
 </style>
