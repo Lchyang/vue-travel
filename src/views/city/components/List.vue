@@ -1,81 +1,90 @@
 <template>
-  <div class="city-list">
-    <div class="area">
-      <div class="header border-topbottom">当前城市</div>
-      <div class="button-list">
-        <div class="button-swaper">
-          <div class="button">北京</div>
+  <div class="city-list wrapper" ref="wrapper">
+    <div>
+      <div class="area">
+        <div class="header border-topbottom">当前城市</div>
+        <div class="button-list">
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="header border-topbottom">当前城市</div>
-      <div class="button-list">
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-swaper">
-          <div class="button">北京</div>
+      <div class="area">
+        <div class="header border-topbottom">当前城市</div>
+        <div class="button-list">
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-swaper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="header border-topbottom">当前城市</div>
-      <div class="item-list">
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-      </div>
-      <div class="header border-topbottom">当前城市</div>
-      <div class="item-list">
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-      </div>
-      <div class="header border-topbottom">当前城市</div>
-      <div class="item-list">
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
-        <div class="item">呼和浩特</div>
+      <div class="area">
+        <div class="header border-topbottom">当前城市</div>
+        <div class="item-list">
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+        </div>
+        <div class="header border-topbottom">当前城市</div>
+        <div class="item-list">
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+        </div>
+        <div class="header border-topbottom">当前城市</div>
+        <div class="item-list">
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+          <div class="item">呼和浩特</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import BScroll from '@better-scroll/core'
+export default {
+  mounted () {
+    setTimeout(() => {
+      this.scroll = new BScroll(this.$refs.wrapper, {})
+    }, 20)
+  }
+}
 </script>
 
 <style scoped lang="stylus">
 .city-list
-  overflow hidden
+  overflow: hidden
   position: absolute
   top: 1.58rem
   left: 0
