@@ -2,22 +2,54 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list></city-list>
-    <city-alph></city-alph>
+    <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
+    <city-alph :cities="cities" @change="handleAlphClick"></city-alph>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlph from './components/Alph'
 export default {
+  data () {
+    return {
+      hotCities: [],
+      cities: {},
+      letter: ''
+    }
+  },
   components: {
     CityHeader,
     CitySearch,
     CityList,
     CityAlph
+  },
+  mounted () {
+    this.getCityData()
+  },
+  methods: {
+    getCityData () {
+      axios
+        .get('/api/city.json')
+        .then(response => {
+          const data = response.data
+          console.log(data)
+          if (data.ret && data.data) {
+            const ret = data.data
+            this.hotCities = ret.hotCities
+            console.log(this.hotCities)
+            this.cities = ret.cities
+            console.log(this.cities)
+          }
+        })
+        .catch(error => console.log(error))
+    },
+    handleAlphClick (letter) {
+      this.letter = letter
+    }
   }
 }
 </script>

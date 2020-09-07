@@ -1,22 +1,29 @@
 <template>
   <div class="alph-list">
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
-    <div class="alph">A</div>
+    <div class="alph" @click="handleClickAlph" v-for="(item,key) of cities" :key="key">{{key}}</div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+    }
+  },
+  props: {
+    cities: Object
+  },
+  methods: {
+    handleClickAlph (event) {
+      this.$emit('change', event.target.innerText)
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus">
 @import '~styles/varibles'
+
 .alph-list
   display: flex
   flex-direction: column

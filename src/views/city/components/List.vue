@@ -10,61 +10,17 @@
         </div>
       </div>
       <div class="area">
-        <div class="header border-topbottom">当前城市</div>
+        <div class="header border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-swaper">
-            <div class="button">北京</div>
+          <div class="button-swaper" v-for="item of hotCities" :key="item.id">
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="header border-topbottom">当前城市</div>
+      <div class="area" v-for="(item,key) of cities" :key="key">
+        <div class="header border-topbottom" :ref="key">{{key}}</div>
         <div class="item-list">
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-        </div>
-        <div class="header border-topbottom">当前城市</div>
-        <div class="item-list">
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-        </div>
-        <div class="header border-topbottom">当前城市</div>
-        <div class="item-list">
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
-          <div class="item">呼和浩特</div>
+          <div class="item" v-for="city of item" :key="city.id">{{city.name}}</div>
         </div>
       </div>
     </div>
@@ -74,10 +30,24 @@
 <script>
 import BScroll from '@better-scroll/core'
 export default {
+  props: {
+    hotCities: Array,
+    cities: Object,
+    letter: String
+  },
   mounted () {
     setTimeout(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {})
     }, 20)
+  },
+  watch: {
+    letter: function () {
+      if (this.letter) {
+        this.scroll = new BScroll(this.$refs.wrapper, {})
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
