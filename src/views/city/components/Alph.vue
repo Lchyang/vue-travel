@@ -1,6 +1,15 @@
 <template>
   <div class="alph-list">
-    <div class="alph" @click="handleClickAlph" v-for="(item,key) of cities" :key="key">{{key}}</div>
+    <div
+      class="alph"
+      @click="handleClickAlph"
+      @touchstart.prevent="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+      v-for="(item,key) of cities"
+      :key="key"
+      :ref="key"
+    >{{key}}</div>
   </div>
 </template>
 
@@ -8,7 +17,12 @@
 export default {
   data () {
     return {
+      touchStart: false,
+      letters: []
     }
+  },
+  mounted () {
+    setTimeout(() => { this.getLetters() }, 20)
   },
   props: {
     cities: Object
@@ -16,6 +30,29 @@ export default {
   methods: {
     handleClickAlph (event) {
       this.$emit('change', event.target.innerText)
+    },
+    handleTouchStart () {
+      this.touchStart = true
+    },
+    handleTouchMove (e) {
+      if (this.touchStart) {
+        const startY = this.$refs.A[0].offsetTop
+        const touchY = e.touches[0].clientY - 79
+        const index = Math.floor((touchY - startY) / 20)
+        const letter = this.letters[index]
+        if (index >= 0 && index <= this.letters.length) {
+          this.$emit('change', letter)
+        }
+      }
+    },
+    handleTouchEnd () {
+      this.touchStart = false
+    },
+    getLetters () {
+      for (const i in this.cities) {
+        this.letters.push(i)
+      }
+      return this.letters
     }
   }
 }

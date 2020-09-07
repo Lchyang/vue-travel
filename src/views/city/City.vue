@@ -36,13 +36,10 @@ export default {
         .get('/api/city.json')
         .then(response => {
           const data = response.data
-          console.log(data)
           if (data.ret && data.data) {
             const ret = data.data
             this.hotCities = ret.hotCities
-            console.log(this.hotCities)
             this.cities = ret.cities
-            console.log(this.cities)
           }
         })
         .catch(error => console.log(error))
