@@ -48,7 +48,7 @@ export default {
         if (index >= 0 && index <= this.letters.length) {
           this.$emit('change', letter)
         }
-      })
+      }, 8)
     },
     handleTouchEnd () {
       this.touchStart = false

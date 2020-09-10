@@ -12,12 +12,14 @@ try {
 
 export default new Vuex.Store({
   state: {
-    city: defaultCity()
+    city: defaultCity
   },
   mutations: {
     changeCity (state, name) {
       state.city = name
-      localStorage.setItem('city', name)
+      try {
+        localStorage.setItem('city', name)
+      } catch (e) { }
     }
   },
   actions: {

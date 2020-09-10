@@ -30,6 +30,8 @@ export default {
   mounted () {
     this.getCityData()
   },
+  activated () {
+  },
   methods: {
     getCityData () {
       axios
