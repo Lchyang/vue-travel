@@ -1,14 +1,20 @@
 <template>
   <div>
     <div class="recommend-header">热门推荐</div>
-    <div class="recommend-content" v-for="item of list" :key="item.id">
+    <router-link
+      tag="div"
+      to="/detail"
+      class="recommend-content"
+      v-for="item of list"
+      :key="item.id"
+    >
       <img class="img" :src="item.imgUrl" />
       <div class="content-swapper">
         <div class="recommend-title">{{item.title}}</div>
         <div class="recommend-desc">{{item.desc}}</div>
         <button class="item-button">查看详情</button>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
