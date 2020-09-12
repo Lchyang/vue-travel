@@ -25,6 +25,9 @@ export default {
   activated () {
     window.addEventListener('scroll', this.handleScroll)
   },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll () {
       const offsetTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
