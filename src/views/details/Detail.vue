@@ -1,11 +1,14 @@
 <template>
   <div>
     <banner :detailData="detailData"></banner>
+    <detail-header></detail-header>
+    <div class="blank"></div>
   </div>
 </template>
 
 <script>
 import Banner from './components/Banner'
+import DetailHeader from './components/Header'
 import axios from 'axios'
 export default {
   data () {
@@ -14,7 +17,8 @@ export default {
     }
   },
   components: {
-    Banner
+    Banner,
+    DetailHeader
   },
   mounted () {
     this.getDetailData()
@@ -36,4 +40,7 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+.blank
+  height: 50rem
+</style>
