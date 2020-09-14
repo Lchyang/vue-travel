@@ -3,7 +3,7 @@
     <div class="recommend-header">热门推荐</div>
     <router-link
       tag="div"
-      to="/detail"
+      :to="'/detail/' + item.id"
       class="recommend-content"
       v-for="item of list"
       :key="item.id"

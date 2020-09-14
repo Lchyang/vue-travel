@@ -26,7 +26,12 @@ export default {
   methods: {
     getDetailData () {
       axios
-        .get('/api/detail.json')
+        .get('/api/detail.json', {
+          params: {
+            id: this.$route.params.id
+          }
+
+        })
         .then(response => {
           const data = response.data
           if (data.ret && data.data) {
